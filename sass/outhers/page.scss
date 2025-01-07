@@ -1,0 +1,427 @@
+// Importa o arquivo colors
+@use '../colors/colors' as colors;
+
+// Importa Fonte
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-w1g');
+
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Helvetica Neue LT W1G', sans-serif;   
+    font-weight: 300;  
+    background-color: colors.$fundo_cardapio;  
+
+}
+
+@mixin centralizar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: colors.$fundo_home;
+    margin-top: 4em;
+
+}
+.menu {
+    background-color: colors.$fundo_home;
+    
+    padding: 0 6vw;
+    // max-width: 100em;
+    height: auto;
+    position: fixed; 
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+
+    @include centralizar;
+    justify-content: space-between;
+
+    .flex {
+        @include centralizar; 
+         
+    }
+    img {
+        height: 4em;
+        width: auto;
+        padding-bottom: .70em
+    }
+    ul{
+        @include centralizar;
+        gap: 1em;
+        list-style-type: none;
+
+        li{ 
+
+            height: 1.5em;
+
+            &:hover {
+                a {
+                    color: #FF3C00;
+                    transition: all 0.5s ease-in-out;
+                }
+                cursor: pointer;
+            }
+            &:hover:after {
+                content: "";
+                display: block;
+                width: 0;
+                background: colors.$fundo_cardapio;
+                height: 2px;
+                margin-left: auto;
+                margin-right: auto;
+                animation: underline 0.5s forwards;
+                
+            }
+            @keyframes underline{
+                from{
+                    width:0px
+                } to { 
+                    width:calc(100%)
+                }
+            }
+        }
+        
+        a {
+            text-decoration: none;
+            color: colors.$cor_text;
+        }
+    } 
+    .btn-reservas {
+        background-color: colors.$fundo_cardapio;
+        border-radius: 10px;
+        font-family: 'Helvetica Neue LT W1G', sans-serif;   
+        font-weight: 300; 
+        height: 2.1em;
+        margin-bottom: .30em;
+
+        &:hover {
+            background-color: colors.$fundo_footer;
+        }
+        
+                     
+    }
+}
+
+.carrossel {
+    
+    background-color: colors.$fundo_home;
+    height: auto;
+    padding-bottom: 8em;
+
+    width: 98vw;
+    max-width: 100em;
+
+    .carousel-item > img {
+
+        width: 82%;
+        height: 87vh;
+        max-height: 700px;
+        border-radius: 2em;
+
+    }
+    .carousel-inner .carousel-item:nth-child(2), .carousel-inner .carousel-item:nth-child(3) {
+        filter: brightness(60%);
+    }
+    .carousel-control-prev, .carousel-control-next {
+        width: 25%;
+        cursor: default;
+    }
+
+    @mixin positions {
+        position: absolute;
+        height: auto;
+        pointer-events: none; 
+    }
+
+    .gourmet {
+
+        @include positions;
+        top: 0; 
+        left: 9%; 
+        width: 35%; 
+    }
+    .logo_carrossel {
+
+        @include positions;
+        top: 0; 
+        right: 11%; 
+        width: 9%;
+    }
+    .como_chegar {
+
+        @include positions;
+        bottom: 0; 
+        right: 11%; 
+        width: 25%; 
+
+    }
+
+}
+
+.cardapio {
+
+    @include centralizar;
+    background-color: colors.$fundo_cardapio;
+    padding-bottom: 5em;
+}
+
+.catalogo {
+
+    background-color: colors.$fundo_cardapio;
+    height: auto;
+    width: 80vw;
+    max-width: 100em;
+    position: relative;
+
+    .title_cardapio {
+        position: absolute;
+        top: -5.8em;
+        left: -1%;
+        width: 26em;
+        height: auto;
+        pointer-events: none; 
+        opacity: 1 !important;
+
+    }
+    p {
+
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-top: 1.5em;
+
+
+    }
+    .container {
+        @include centralizar;
+        flex-direction: column;
+        gap: 1.4em;
+        margin-top: 2em;
+
+        .prato {
+
+            width: 100%;
+            max-width: 26em; 
+            height: 100%;
+            border-radius: 1em;
+            box-shadow: 3px 3px 11px 1px #00000078;
+
+        }
+        .prato img {
+            padding: .5rem;
+            height: 13em;
+        }
+        .card-body {
+
+            padding: 0.5rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+        .card-body p {
+            color: colors.$cor_text_footer;
+            font-size: 0.8em;
+            font-weight: 100; 
+            margin: 0.5em 0.5em 1em 0;
+            text-align: justify;
+
+        }
+        .descricao {
+            display: flex;
+            flex-direction: column;  
+            
+            .titulo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 2em;
+            }
+            p {
+                margin: 0;
+                margin-bottom: .5rem;
+            }
+            img {
+
+                height: 2em;
+                margin-bottom: .5em;
+            }
+
+        }
+        .btn-entrega {
+            background-color: colors.$fundo_cardapio;
+            border-radius: 10px;
+            font-family: 'Helvetica Neue LT W1G', sans-serif;   
+            font-weight: 100; 
+            font-size: 0.8em;
+            height: 2.1em;
+
+            &:hover {
+                background-color: colors.$fundo_footer;
+            }
+        }
+        .card-title {
+            font-family: 'Helvetica Neue LT W1G', sans-serif;   
+            font-weight: 300; 
+            font-size: 1.7vw;
+            
+        }
+        .footer_prato {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            i {
+                padding-right: .7em;
+            }
+        }
+        .preco {
+            display: flex;
+            gap: .5em;
+            
+            p {
+                margin: 0;
+                height: 1.2em;
+                font-weight: 200;
+                color: colors.$cor_text;
+
+            }
+            & p:nth-child(1) {
+
+                font-size: 1vw;
+
+            }
+            & p:nth-child(2) {
+
+                font-size: 3vw;
+                font-weight: 400;
+            }
+            & p:nth-child(3) {
+                padding-top: 2.5em;
+                font-size: 1vw;
+            }
+        }  
+    }
+}
+
+.container-footer {
+
+    background-color: colors.$fundo_cardapio;
+    @include centralizar;
+
+    .footer {
+        background-color: colors.$fundo_cardapio;
+        height: auto;
+        width: 100vw;
+        max-width: 100em;
+        position: relative;
+
+        .footer_info {
+
+            position: relative;
+
+            .logo_grande {
+                
+                width: 70%;
+                z-index: 10;
+
+            }
+            .informacoes {
+
+                display: flex;
+                gap: 6em;
+                position: absolute;
+                top: 19%;
+                left: 10%;
+                height: auto;
+                z-index: 100;
+                // width: 70%;
+
+                h4, p {
+
+                    color: #ffffff;
+                    font-weight: 200;
+
+                }
+                h4 {font-size: 1.3vw;}
+                p  {font-size: 0.9vw; }
+                i {
+
+                    color: #ffffff;
+                    cursor: pointer;
+                    font-size: 2vw;
+                    
+
+                }
+
+            }
+            .map iframe {
+
+                position: absolute;
+                top: 7%;
+                left: 71%;
+                z-index: 100;
+                width: 27%;
+                height: 85%;
+                border-radius: 1em;
+
+            }
+            .msg {
+                position: absolute;
+                top: 95%;
+                left: 50%; 
+                transform: translateX(-50%);
+                z-index: 100;
+                color: rgba(255, 255, 255, 0.634);
+                font-weight: 100;
+                font-size: 0.8vw;
+                letter-spacing: 0.1em;
+
+            }
+        }
+
+    }
+    .creditos {
+
+        @include centralizar;
+        padding: 0.5em;
+        gap: 0.8em;
+
+        .logo_branco {
+
+            width: 2vw;
+        }
+        p {
+            font-size: 1vw;
+            color: #ffffff;
+            padding-top: 0.3em;
+        }
+    }
+
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+} 
+::-webkit-scrollbar-track {
+    background: #ffffff; 
+}
+::-webkit-scrollbar-thumb {
+    background: #292929; 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1a1a1a; 
+}

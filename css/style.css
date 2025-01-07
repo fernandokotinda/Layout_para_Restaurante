@@ -1,0 +1,414 @@
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-lt-w1g");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Helvetica Neue LT W1G", sans-serif;
+  font-weight: 300;
+  background-color: #FF3C00;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F5F5F7;
+  margin-top: 4em;
+}
+
+.menu {
+  background-color: #F5F5F7;
+  padding: 0 6vw;
+  height: auto;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.menu .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu img {
+  height: 4em;
+  width: auto;
+  padding-bottom: 0.7em;
+}
+.menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  list-style-type: none;
+}
+.menu ul li {
+  height: 1.5em;
+}
+.menu ul li:hover {
+  cursor: pointer;
+}
+.menu ul li:hover a {
+  color: #FF3C00;
+  transition: all 0.5s ease-in-out;
+}
+.menu ul li:hover:after {
+  content: "";
+  display: block;
+  width: 0;
+  background: #FF3C00;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: underline 0.5s forwards;
+}
+@keyframes underline {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+.menu ul a {
+  text-decoration: none;
+  color: #404040;
+}
+.menu .btn-reservas {
+  background-color: #FF3C00;
+  border-radius: 10px;
+  font-family: "Helvetica Neue LT W1G", sans-serif;
+  font-weight: 300;
+  height: 2.1em;
+  margin-bottom: 0.3em;
+}
+.menu .btn-reservas:hover {
+  background-color: #BE2D00;
+}
+
+.carrossel {
+  background-color: #F5F5F7;
+  height: auto;
+  padding-bottom: 8em;
+  width: 98vw;
+  max-width: 100em;
+}
+.carrossel .carousel-item > img {
+  width: 82%;
+  height: 87vh;
+  max-height: 700px;
+  border-radius: 2em;
+}
+.carrossel .carousel-inner .carousel-item:nth-child(2), .carrossel .carousel-inner .carousel-item:nth-child(3) {
+  filter: brightness(60%);
+}
+.carrossel .carousel-control-prev, .carrossel .carousel-control-next {
+  width: 25%;
+  cursor: default;
+}
+.carrossel .gourmet {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+  top: 0;
+  left: 9%;
+  width: 35%;
+}
+.carrossel .logo_carrossel {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+  top: 0;
+  right: 11%;
+  width: 9%;
+}
+.carrossel .como_chegar {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+  bottom: 0;
+  right: 11%;
+  width: 25%;
+}
+
+.cardapio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF3C00;
+  padding-bottom: 5em;
+}
+
+.catalogo {
+  background-color: #FF3C00;
+  height: auto;
+  width: 80vw;
+  max-width: 100em;
+  position: relative;
+}
+.catalogo .title_cardapio {
+  position: absolute;
+  top: -5.8em;
+  left: -1%;
+  width: 26em;
+  height: auto;
+  pointer-events: none;
+  opacity: 1 !important;
+}
+.catalogo p {
+  color: #ffffff;
+  font-size: 1.1em;
+  margin-top: 1.5em;
+}
+.catalogo .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.4em;
+  margin-top: 2em;
+}
+.catalogo .container .prato {
+  width: 100%;
+  max-width: 26em;
+  height: 100%;
+  border-radius: 1em;
+  box-shadow: 3px 3px 11px 1px rgba(0, 0, 0, 0.4705882353);
+}
+.catalogo .container .prato img {
+  padding: 0.5rem;
+  height: 13em;
+}
+.catalogo .container .card-body {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.catalogo .container .card-body p {
+  color: #808080;
+  font-size: 0.8em;
+  font-weight: 100;
+  margin: 0.5em 0.5em 1em 0;
+  text-align: justify;
+}
+.catalogo .container .descricao {
+  display: flex;
+  flex-direction: column;
+}
+.catalogo .container .descricao .titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2em;
+}
+.catalogo .container .descricao p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.catalogo .container .descricao img {
+  height: 2em;
+  margin-bottom: 0.5em;
+}
+.catalogo .container .btn-entrega {
+  background-color: #FF3C00;
+  border-radius: 10px;
+  font-family: "Helvetica Neue LT W1G", sans-serif;
+  font-weight: 100;
+  font-size: 0.8em;
+  height: 2.1em;
+}
+.catalogo .container .btn-entrega:hover {
+  background-color: #BE2D00;
+}
+.catalogo .container .card-title {
+  font-family: "Helvetica Neue LT W1G", sans-serif;
+  font-weight: 300;
+  font-size: 1.7vw;
+}
+.catalogo .container .footer_prato {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.catalogo .container .footer_prato i {
+  padding-right: 0.7em;
+}
+.catalogo .container .preco {
+  display: flex;
+  gap: 0.5em;
+}
+.catalogo .container .preco p {
+  margin: 0;
+  height: 1.2em;
+  font-weight: 200;
+  color: #404040;
+}
+.catalogo .container .preco p:nth-child(1) {
+  font-size: 1vw;
+}
+.catalogo .container .preco p:nth-child(2) {
+  font-size: 3vw;
+  font-weight: 400;
+}
+.catalogo .container .preco p:nth-child(3) {
+  padding-top: 2.5em;
+  font-size: 1vw;
+}
+
+.container-footer {
+  background-color: #FF3C00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-footer .footer {
+  background-color: #FF3C00;
+  height: auto;
+  width: 100vw;
+  max-width: 100em;
+  position: relative;
+}
+.container-footer .footer .footer_info {
+  position: relative;
+}
+.container-footer .footer .footer_info .logo_grande {
+  width: 70%;
+  z-index: 10;
+}
+.container-footer .footer .footer_info .informacoes {
+  display: flex;
+  gap: 6em;
+  position: absolute;
+  top: 19%;
+  left: 10%;
+  height: auto;
+  z-index: 100;
+}
+.container-footer .footer .footer_info .informacoes h4, .container-footer .footer .footer_info .informacoes p {
+  color: #ffffff;
+  font-weight: 200;
+}
+.container-footer .footer .footer_info .informacoes h4 {
+  font-size: 1.3vw;
+}
+.container-footer .footer .footer_info .informacoes p {
+  font-size: 0.9vw;
+}
+.container-footer .footer .footer_info .informacoes i {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 2vw;
+}
+.container-footer .footer .footer_info .map iframe {
+  position: absolute;
+  top: 7%;
+  left: 71%;
+  z-index: 100;
+  width: 27%;
+  height: 85%;
+  border-radius: 1em;
+}
+.container-footer .footer .footer_info .msg {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  color: rgba(255, 255, 255, 0.634);
+  font-weight: 100;
+  font-size: 0.8vw;
+  letter-spacing: 0.1em;
+}
+.container-footer .creditos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  gap: 0.8em;
+}
+.container-footer .creditos .logo_branco {
+  width: 2vw;
+}
+.container-footer .creditos p {
+  font-size: 1vw;
+  color: #ffffff;
+  padding-top: 0.3em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1a1a;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+  .menu {
+    padding: 0 1vw;
+  }
+  .menu ul {
+    padding-left: 1rem;
+  }
+  .catalogo {
+    width: 94vw;
+  }
+  .catalogo .container .btn-entrega {
+    padding: 0.5em;
+    font-size: 0.8em;
+  }
+}
+@media only screen and (min-width: 1921px) {
+  .catalogo .container .card-title {
+    font-size: 2em;
+  }
+  .catalogo .container .preco p:nth-child(1) {
+    font-size: 0.6vw;
+  }
+  .catalogo .container .preco p:nth-child(2) {
+    font-size: 1.8vw;
+  }
+  .catalogo .container .preco p:nth-child(3) {
+    font-size: 0.6vw;
+  }
+  .container-footer .footer .footer_info .informacoes h4 {
+    font-size: 1.7em;
+  }
+  .container-footer .footer .footer_info .informacoes p {
+    font-size: 1em;
+  }
+  .container-footer .footer .footer_info .informacoes i {
+    font-size: 2em;
+  }
+  .container-footer .footer .footer_info .msg {
+    font-size: 0.6vw;
+  }
+  .container-footer .creditos .logo_branco {
+    width: 2em;
+  }
+  .container-footer .creditos p {
+    font-size: 1em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

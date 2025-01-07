@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Css bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">  
+    <!-- Lib Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />         
+    <!-- Link Css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="menu">
+        <div class="flex">
+            <img src="imgs/logo_echo.png" class="img-fluid" alt="Logo Echo">
+            <nav>
+                <ul class="mb-0">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#section-cardapio">Ver Cardápio</a></li>
+                    <li><a href="#section-catalogo">Ver Preços</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#section_footer">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex gap-4">
+            <p class="mb-0"><span>(XX)XXXX-XXXX</span> <span class="px-1">|</span> <span>(XX)XXXXX-XXXX</span></p>
+            <button type="button" class="btn btn-danger btn-reservas">Reservas</button>
+        </div>
+    </header>
+    <section id="section-home" class="home" style="scroll-margin-top: 4em;">
+        <section class="carrossel">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="imgs/restaurante1.png" class="d-block mx-auto"alt="Foto Restaurante">
+              </div>
+              <div class="carousel-item" data-bs-interval="10000">
+                <img src="imgs/restaurante2.jpg" class="d-block mx-auto" alt="Foto Restaurante">
+              </div>
+              <div class="carousel-item" data-bs-interval="10000">
+                <img src="imgs/restaurante3.jpg" class="d-block mx-auto" alt="Foto Restaurante">
+              </div>
+              <img src="imgs/restaurante_Gourmet.png" class="gourmet" data-aos="fade-right" data-aos-duration="1500" alt="Restaurante Gourmet">
+              <img src="imgs/logo_echo.png" class="logo_carrossel" data-aos="zoom-in" data-aos-duration="1500" alt="Logo Echo">
+              <img src="imgs/echo_restaurante.png" class="como_chegar" data-aos="fade-left" data-aos-duration="1500" alt="Como chegar Echo">
+            </div>
+            <button class="carousel-control-prev" type="button">
+              <span class="carousel-control-prev-icon" aria-hidden="true" style="cursor: pointer;" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" >
+              <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer;" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+    </section>
+    <main class="cardapio" id="section-cardapio">
+      <section class="catalogo" id="section-catalogo">
+        <img src="imgs/cardapio.png" class="title_cardapio" data-aos="fade-right" data-aos-duration="1500" alt="Cardapio título">
+        <p class="text-end">Os melhores ingredientes do Brasil</p>
+        <div class="container px-0 opcoes" data-aos="fade-up" data-aos-duration="1500">
+
+          <div class="row">
+
+            <div class="col">
+              <div class="card prato">
+                <img src="imgs/sopa.png" class="card-img-top" alt="Sopa de Carne">
+                <div class="card-body">
+                  <div class="descricao">
+                    <div class="titulo">
+                      <h5 class="card-title">Sopa de Carne</h5>
+                      <p>8.5 <img src="imgs/Star.png" class="px-0 py-0" alt="Estrela Nota"></p>
+                    </div>
+                    <p>Uma sopa feita com as melhores carnes do mercado nacional, acompanhada de legumes frescos, ervas aromáticas e um toque de creme de leite para um sabor ainda mais suave.</p>
+                  </div>
+                  <div class="footer_prato">
+                    <div class="preco">
+                      <p>R$</p>
+                      <p>59,</p>
+                      <p>99</p>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-entrega text-start"><i class="bi bi-truck"></i>Pedir para entrega</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card prato">
+                <img src="imgs/penne.png" class="card-img-top" alt="Penne Frutos do Mar">
+                <div class="card-body">
+                  <div class="descricao">
+                    <div class="titulo">
+                      <h5 class="card-title">Penne Frutos do Mar</h5>
+                      <p>8.0 <img src="imgs/Star.png" class="px-0 py-0" alt="Estrela Nota"></p>
+                    </div>
+                    <p>Penne al dente acompanhado de camarões suculentos, lulas frescas e mexilhões, tudo envolto em um molho delicado de tomate, alho e ervas aromáticas, finalizado com o toque especial de ovas de peixe</p>
+                  </div>
+                  <div class="footer_prato">
+                    <div class="preco">
+                      <p>R$</p>
+                      <p>49,</p>
+                      <p>99</p>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-entrega text-start"><i class="bi bi-truck"></i>Pedir para entrega</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="card prato">
+                <img src="imgs/salteado.png" class="card-img-top" alt="Salteado Mar e Terra">
+                <div class="card-body">
+                  <div class="descricao">
+                    <div class="titulo">
+                      <h5 class="card-title">Salteado Mar e Terra</h5>
+                      <p>9.5 <img src="imgs/Star.png" class="px-0 py-0" alt="Estrela Nota"></p>
+                    </div>
+                    <p>Uma fusão irresistível de sabores, unindo suculentos pedaços de carne e camarões frescos, salteados com tiras crocantes de pimentão, cebola roxa e especiarias, tudo cuidadosamente acompanhado por batatas fritas douradas. Finalizado com ervas frescas para um toque de aroma e frescor. Ideal para quem busca uma experiência gastronômica rica e equilibrada.</p>
+                  </div>
+                  <div class="footer_prato">
+                    <div class="preco">
+                      <p>R$</p>
+                      <p>39,</p>
+                      <p>99</p>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-entrega text-start"><i class="bi bi-truck"></i>Pedir para entrega</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col">
+              <div class="card prato">
+                <img src="imgs/macarrao.png" class="card-img-top" alt="Macarrão fettuccini">
+                <div class="card-body">
+                  <div class="descricao">
+                    <div class="titulo">
+                      <h5 class="card-title">Macarrão fettuccini</h5>
+                      <p>9.5 <img src="imgs/Star.png" class="px-0 py-0" alt="Estrela Nota"></p>
+                    </div>
+                    <p>Fettuccine al dente envolto em um molho suave e aveludado à base de creme de queijo, com pedaços macios de frango e cogumelos salteados. Finalizado com folhas frescas de manjericão e um toque de parmesão ralado, essa criação traz conforto e elegância em cada garfada.</p>
+                  </div>
+                  <div class="footer_prato">
+                    <div class="preco">
+                      <p>R$</p>
+                      <p>39,</p>
+                      <p>99</p>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-entrega text-start"><i class="bi bi-truck"></i>Pedir para entrega</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card prato">
+                <img src="imgs/bife.png" class="card-img-top" alt="Bife Campestre">
+                <div class="card-body">
+                  <div class="descricao">
+                    <div class="titulo">
+                      <h5 class="card-title">Bife Campestre</h5>
+                      <p>9.5 <img src="imgs/Star.png" class="px-0 py-0" alt="Estrela Nota"></p>
+                    </div>
+                    <p>Bife suculento, acompanhado de legumes grelhados e batatas fritas crocantes, temperados com ervas frescas e um toque de molho especial.</p>
+                  </div>
+                  <div class="footer_prato">
+                    <div class="preco">
+                      <p>R$</p>
+                      <p>29,</p>
+                      <p>99</p>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-entrega text-start"><i class="bi bi-truck"></i>Pedir para entrega</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card prato">
+                <img src="imgs/salada.png" class="card-img-top" alt="Salada Primavera">
+                <div class="card-body">
+                  <div class="descricao">
+                    <div class="titulo">
+                      <h5 class="card-title">Salada Primavera</h5>
+                      <p>8.5 <img src="imgs/Star.png" class="px-0 py-0" alt="Estrela Nota"></p>
+                    </div>
+                    <p>Um prato leve e vibrante, com frango desfiado e uma explosão de cores dos vegetais frescos: repolho roxo, cenoura ralada e pimentões crocantes. Perfeito para quem busca um toque rústico e saudável, servido com pão artesanal para completar a experiência.</p>
+                  </div>
+                  <div class="footer_prato">
+                    <div class="preco">
+                      <p>R$</p>
+                      <p>19,</p>
+                      <p>99</p>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-entrega text-start"><i class="bi bi-truck"></i>Pedir para entrega</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="container-footer">
+      <section id="section_footer" class="footer">
+        <div class="footer_info">
+          <img src="imgs/logo_echo_grande.png" class="logo_grande" alt="Logo Echo">
+          <div class="informacoes">
+            <div>
+              <h4>Contato</h4>
+              <p>(XX) XXXX-XXXX</p>
+              <p class="mb-4">(XX) XXXXXX-XXXX</p>
+
+              <h4>E-mail</h4>
+              <p class="mb-4">XXXXXX@XXXXX.XXX</p>
+
+              <h4>Horário de Funcionamento</h4>
+              <p>XX:XX às XX:XX   Em dia de semana</p>
+              <p class="mb-4">XX:XX às XX:XX   Em final de semana</p>
+
+            </div>
+            <div>
+              <h4>Endereço</h4>
+              <p class="mb-4">XXX-XXXX X XXXX</p>
+
+              <i class="bi bi-instagram me-3"></i>
+              <i class="bi bi-facebook"></i>
+
+            </div>
+          </div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6057.043287860993!2d-49.28978004984651!3d-25.487048340501367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3daca41e049%3A0x9be2df47cb6789a4!2sEcho!5e0!3m2!1spt-PT!2sbr!4v1736200355808!5m2!1spt-PT!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="msg pb-0">TODAS AS IMAGENS SÃO MERAMENTE ILUSTRATIVAS. "Designed by stories / Freepik".</p>
+        </div>
+        <div class="creditos">
+          <img src="imgs/logo_echo_branco.png" class="logo_branco" alt="Logo Echo">
+          <p class="pb-0 mb-0">Designed by Echo© 2024</p>
+        </div>
+      </section>
+    </footer>
+    
+    <!-- Script Js Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script> 
+    <!-- Script Lib Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Outros Scripts -->
+    <script>
+      //Script Para quando clicar no li chamar o link dentro dele e evitar bugs 
+      const listItems = document.querySelectorAll(".menu li");
+  
+      listItems.forEach(li => {
+          li.addEventListener("click", () => {
+              const link = li.querySelector("a");
+              if (link) {
+                  link.click();
+              }
+          });
+      });
+      //Script Para fazer a rolagem até a coordenada certa ao clicar em "Ver Cardápio" no menu
+      document.querySelector('a[href="#section-cardapio"]').addEventListener('click', function (e) {
+        e.preventDefault(); 
+        const targetElement = document.querySelector('#section-cardapio');
+        const offset = -9 * 16; 
+
+        if (targetElement) {
+          const elementPosition = targetElement.offsetTop;
+          const offsetPosition = elementPosition + offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth', 
+          });
+        }
+      });
+    </script>
+</body>
+</html>

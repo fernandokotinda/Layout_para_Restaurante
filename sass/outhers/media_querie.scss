@@ -1,0 +1,69 @@
+// Importa o arquivo colors
+@use '../colors/colors' as colors;
+// Importa o arquivo page
+@use './page' as page;
+
+//Media querie para arrumar bugs de telas entre 1024px e 1150px
+@media only screen and (min-width: 1024px) and (max-width: 1151px){
+    
+    .menu {
+        padding: 0 1vw;
+
+        ul {
+            padding-left: 1rem;
+        }
+    }
+    .catalogo {
+
+        width: 94vw;
+        
+        .container {
+            .btn-entrega {
+                padding: 0.5em;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+}
+
+//Media querie para arrumar bugs de telas maiores que 1920px
+@media only screen and (min-width: 1921px){
+    
+    .catalogo {
+        .container {
+            .card-title {
+                font-size: 2em;
+            }
+            .preco {
+
+                & p:nth-child(1) {font-size: .6vw;}
+                & p:nth-child(2) {font-size: 1.8vw;}
+                & p:nth-child(3) {font-size: .6vw;}
+
+            }
+        }
+    }
+
+    .container-footer {
+        .footer {
+            .footer_info {
+                .informacoes {
+
+                    h4 {font-size: 1.7em;}
+                    p  {font-size: 1em;}
+                    i  {font-size: 2em;}
+                }
+                .msg {
+                    font-size: 0.6vw;
+                }
+            }
+        }
+        .creditos {
+
+            .logo_branco { width: 2em;}
+            p {font-size: 1em;}
+        }
+    }
+
+}
