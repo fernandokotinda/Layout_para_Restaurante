@@ -355,12 +355,12 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #292929;
+  background: #808080;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1a1a1a;
+  background: #515151;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1151px) {

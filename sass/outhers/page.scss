@@ -419,9 +419,9 @@ html, body {
     background: #ffffff; 
 }
 ::-webkit-scrollbar-thumb {
-    background: #292929; 
+    background: colors.$cor_text_footer; 
     border-radius: 10px; 
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #1a1a1a; 
+    background: #515151; 
 }
