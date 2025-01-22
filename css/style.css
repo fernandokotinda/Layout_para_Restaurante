@@ -35,6 +35,9 @@ html, body {
   justify-content: center;
   justify-content: space-between;
 }
+.menu .nav-links {
+  display: none;
+}
 .menu .flex {
   display: flex;
   align-items: center;
@@ -109,7 +112,7 @@ html, body {
   max-height: 700px;
   border-radius: 2em;
 }
-.carrossel .carousel-inner .carousel-item:nth-child(2), .carrossel .carousel-inner .carousel-item:nth-child(3) {
+.carrossel .carousel-inner .carousel-item:nth-child(1), .carrossel .carousel-inner .carousel-item:nth-child(3) {
   filter: brightness(60%);
 }
 .carrossel .carousel-control-prev, .carrossel .carousel-control-next {
@@ -146,7 +149,7 @@ html, body {
   align-items: center;
   justify-content: center;
   background-color: #FF3C00;
-  padding-bottom: 5em;
+  padding-bottom: 3em;
 }
 
 .catalogo {
@@ -178,9 +181,13 @@ html, body {
   gap: 1.4em;
   margin-top: 2em;
 }
+.catalogo .container .col {
+  margin-bottom: 1.7em;
+}
 .catalogo .container .prato {
   width: 100%;
   max-width: 26em;
+  min-width: 20em;
   height: 100%;
   border-radius: 1em;
   box-shadow: 3px 3px 11px 1px rgba(0, 0, 0, 0.4705882353);
@@ -331,6 +338,7 @@ html, body {
   letter-spacing: 0.1em;
 }
 .container-footer .creditos {
+  background-color: #FF3C00;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -363,6 +371,234 @@ html, body {
   background: #515151;
 }
 
+@media only screen and (max-width: 1023px) {
+  .menu .tel {
+    display: none !important;
+  }
+  .menu .hamburger {
+    display: flex !important;
+  }
+  .menu .botao-reservas {
+    display: flex !important;
+  }
+  .menu .nav-links.show {
+    left: 0;
+    z-index: 998;
+    background-color: #F5F5F7;
+  }
+  .menu .nav-links li {
+    display: inline;
+    padding: 0 4vw;
+    white-space: nowrap;
+  }
+  .menu .nav-links li:hover {
+    color: grey;
+    transition: none;
+  }
+  .menu .nav-links li:hover:after {
+    animation: none;
+  }
+  .menu .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  .menu .nav-links a:hover {
+    color: gray;
+  }
+  .menu .img-fluid {
+    padding-bottom: 0.3em;
+    z-index: 999;
+  }
+  .menu .hamburger {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 999;
+  }
+  .menu .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    transition: all 0.3s ease;
+  }
+  .menu .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .menu .hamburger {
+    display: flex;
+  }
+  .menu .hamburger.active {
+    z-index: 10000;
+  }
+  .menu .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-left: 0;
+    transition: all 0.3s ease;
+    overflow-y: hidden;
+    z-index: 100;
+  }
+  .menu .nav-links.active {
+    left: 0;
+    z-index: 9999;
+    overflow-y: hidden;
+  }
+  .menu .nav-links li {
+    padding: 0;
+  }
+  .carrossel {
+    width: 100%;
+    max-width: none;
+    padding-bottom: 4em;
+  }
+  .carrossel .carousel-item img {
+    width: 100%;
+    height: 94vh;
+    max-height: none;
+    object-fit: cover; /* Ajusta o tamanho da imagem sem distorcer */
+    object-position: center;
+    border-radius: 0%;
+  }
+  .carrossel .carousel-indicators {
+    bottom: 4vh;
+  }
+  .carrossel .carousel-control-prev, .carrossel .carousel-control-next, .carrossel .logo_carrossel {
+    display: none;
+  }
+  .carrossel .gourmet {
+    top: 3%;
+    left: 0%;
+    width: 75%;
+    max-width: 27em;
+  }
+  .carrossel .como_chegar {
+    bottom: 10%;
+    right: 2%;
+    width: 70%;
+    max-width: 20em;
+  }
+  .cardapio {
+    padding-bottom: 1em;
+  }
+  .cardapio .catalogo .title_cardapio {
+    top: -4em;
+    left: -9%;
+    width: 18em;
+  }
+  .cardapio .catalogo p {
+    font-size: 1em;
+    margin-top: 3em;
+  }
+  .cardapio .catalogo .row .col {
+    margin-bottom: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cardapio .catalogo .row .prato {
+    width: 100%;
+    max-width: 18.2em;
+    min-width: 18em;
+  }
+  .cardapio .catalogo .row .prato .card-img-top {
+    height: 11em;
+  }
+  .cardapio .catalogo .card-title {
+    font-size: 1.3em;
+  }
+  .cardapio .catalogo .preco p:nth-child(1) {
+    font-size: 0.8em;
+  }
+  .cardapio .catalogo .preco p:nth-child(2) {
+    font-size: 1.7em;
+  }
+  .cardapio .catalogo .preco p:nth-child(3) {
+    padding-top: 1.5em;
+    font-size: 0.8em;
+  }
+  .container-footer .footer {
+    height: auto;
+    background-color: #BE2D00;
+  }
+  .container-footer .footer .footer_info {
+    background-color: #BE2D00;
+    padding: 3em;
+    padding-bottom: 0;
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
+  .container-footer .footer .footer_info .logo_grande {
+    display: none;
+  }
+  .container-footer .footer .footer_info .informacoes {
+    display: flex;
+    gap: 0 5em;
+    flex-wrap: wrap;
+    position: static;
+    height: auto;
+    width: 100%;
+    z-index: 100;
+  }
+  .container-footer .footer .footer_info .informacoes h4, .container-footer .footer .footer_info .informacoes p {
+    font-weight: 200;
+  }
+  .container-footer .footer .footer_info .informacoes h4 {
+    font-size: 1.3em;
+  }
+  .container-footer .footer .footer_info .informacoes p {
+    font-size: 0.9em;
+  }
+  .container-footer .footer .footer_info .informacoes i {
+    font-size: 2em;
+  }
+  .container-footer .footer .footer_info .informacoes .contato, .container-footer .footer .footer_info .informacoes .endereco {
+    flex: 1 1 200px;
+  }
+  .container-footer .footer .footer_info .map iframe {
+    position: static;
+    margin: 1em 0;
+    width: 100%;
+    height: 15em;
+    border-radius: 1em;
+  }
+  .container-footer .footer .footer_info .msg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5em;
+    letter-spacing: 0.1em;
+    position: static;
+    transform: translateX(0%);
+    z-index: 0;
+    text-align: center;
+  }
+  .container-footer .footer .creditos .logo_branco {
+    width: 2em;
+  }
+  .container-footer .footer .creditos p {
+    font-size: 0.8em;
+  }
+}
 @media only screen and (min-width: 1024px) and (max-width: 1151px) {
   .menu {
     padding: 0 1vw;

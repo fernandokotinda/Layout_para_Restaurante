@@ -3,6 +3,308 @@
 // Importa o arquivo page
 @use './page' as page;
 
+//Media querie para telas de tablets e celulares
+@media only screen and (max-width: 1023px){ 
+    
+    .menu {
+        
+        .tel { display: none !important;}
+        .hamburger {display: flex !important;}
+        .botao-reservas {display: flex !important;}
+
+        .nav-links.show {
+            left: 0;
+            z-index: 998;
+            background-color: colors.$fundo_home;
+        }
+        
+        .nav-links li {
+            display: inline;
+            padding: 0 4vw;
+            white-space: nowrap;
+
+            &:hover {
+                color: grey;
+                transition: none;
+            }
+            &:hover:after {
+
+                animation: none;
+                
+            }
+        }
+    
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            transition: all .3s ease;
+
+            &:hover {
+                color: gray;
+            }
+        }
+
+
+        .img-fluid{
+            padding-bottom: 0.3em;
+            z-index: 999;
+        }
+
+        .hamburger {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 999;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+    
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .hamburger {
+            display: flex;
+        }
+    
+        .hamburger.active {
+            z-index: 10000;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100vh;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding-left: 0;
+            transition: all 0.3s ease;
+            overflow-y: hidden;
+            z-index: 100;
+        }
+    
+        .nav-links.active {
+            left: 0;
+            z-index: 9999;
+            overflow-y: hidden;
+        }
+    
+        .nav-links li {
+            padding: 0;
+        }
+    
+
+    }
+
+    .carrossel {
+
+        width: 100%;
+        max-width: none;
+        padding-bottom: 4em;
+
+        .carousel-item {
+
+            img { 
+                width: 100%;
+                height: 94vh;
+                max-height: none;
+                object-fit: cover; /* Ajusta o tamanho da imagem sem distorcer */
+                object-position: center;
+                border-radius: 0%;
+            }
+        }
+        .carousel-indicators  {
+            bottom: 4vh;
+        }
+
+        .carousel-control-prev, .carousel-control-next, .logo_carrossel { display: none;}
+
+        .gourmet {
+
+            top: 3%;
+            left: 0%;
+            width: 75%;
+            max-width: 27em;
+        }
+        .como_chegar {
+
+            bottom: 10%;
+            right: 2%;
+            width: 70%;
+            max-width: 20em;
+        }
+    }
+
+    .cardapio {
+
+        padding-bottom: 1em;
+        .catalogo {
+
+            .title_cardapio {
+                top: -4em;
+                left: -9%;
+                width: 18em;
+            }
+            p {
+
+                font-size: 1em;
+                margin-top: 3em;
+
+        
+        
+            }
+            .row {
+                
+                .col {
+                    
+                    margin-bottom: 3em;
+                    @include page.centralizar;
+                
+                }
+
+                .prato {
+    
+                    width: 100%;
+                    max-width: 18.2em;
+                    min-width: 18em; 
+                   
+
+                    .card-img-top {
+                        // width: 18em;
+                        height: 11em;
+                    }
+                }
+
+            }
+            .card-title {
+
+                font-size: 1.3em;
+            }
+            .preco {
+
+                & p:nth-child(1) { 
+                    font-size: 0.8em;
+                }
+                & p:nth-child(2) {
+                    font-size: 1.7em;
+                }
+                & p:nth-child(3) {
+                    padding-top: 1.5em;
+                    font-size: 0.8em;
+                }
+            }  
+
+        }
+    }
+
+    .container-footer {
+       
+        .footer {
+            height: auto;
+            background-color: colors.$fundo_footer;
+          
+            .footer_info {
+                background-color: colors.$fundo_footer;
+                padding: 3em;
+                padding-bottom: 0;
+                position: static;
+                display: flex;
+                flex-direction: column;
+
+                .logo_grande {
+                    display: none;
+                }
+                .informacoes {
+
+                    display: flex;
+                    gap: 0 5em;
+                    flex-wrap: wrap;
+                    position: static;
+                    height: auto;
+                    width: 100%;
+                    z-index: 100;
+    
+                    h4, p {font-weight: 200;}
+                    h4 {font-size: 1.3em;}
+                    p  {font-size: 0.9em;}
+                    i {font-size: 2em;}
+
+                    // .contato {
+                    //     margin-right: 5em;
+                    // }
+                    .contato, .endereco {
+                        flex: 1 1 200px;
+                    }
+
+    
+                }
+
+                .map iframe {
+                    position: static;
+                    margin: 1em 0;
+                    width: 100%;
+                    height: 15em;
+                    border-radius: 1em;
+    
+                }
+                .msg {
+
+                    
+                    width: 100%;
+                    @include page.centralizar;
+                    font-size: 0.5em;
+                    letter-spacing: 0.1em;
+                    position: static;
+                    transform: translateX(0%);
+                    z-index: 0;
+                    text-align: center;
+
+
+
+    
+                }
+        
+                
+            }
+
+            .creditos {
+                
+                
+                .logo_branco {
+                    width: 2em;
+                }
+                p {
+                    font-size: .8em;
+                }
+            }
+        }
+    }
+
+}
+
+
+
 //Media querie para arrumar bugs de telas entre 1024px e 1150px
 @media only screen and (min-width: 1024px) and (max-width: 1151px){
     
@@ -67,3 +369,4 @@
     }
 
 }
+

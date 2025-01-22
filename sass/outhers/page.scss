@@ -10,6 +10,7 @@
     padding: 0%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
 }
 
 html, body {
@@ -48,6 +49,10 @@ html, body {
 
     @include centralizar;
     justify-content: space-between;
+
+    .nav-links {
+        display: none;
+    }
 
     .flex {
         @include centralizar; 
@@ -132,7 +137,7 @@ html, body {
         border-radius: 2em;
 
     }
-    .carousel-inner .carousel-item:nth-child(2), .carousel-inner .carousel-item:nth-child(3) {
+    .carousel-inner .carousel-item:nth-child(1), .carousel-inner .carousel-item:nth-child(3) {
         filter: brightness(60%);
     }
     .carousel-control-prev, .carousel-control-next {
@@ -175,7 +180,8 @@ html, body {
 
     @include centralizar;
     background-color: colors.$fundo_cardapio;
-    padding-bottom: 5em;
+    padding-bottom: 3em;
+
 }
 
 .catalogo {
@@ -210,13 +216,19 @@ html, body {
         gap: 1.4em;
         margin-top: 2em;
 
+        .col {
+            margin-bottom: 1.7em;
+        }
+
         .prato {
 
             width: 100%;
-            max-width: 26em; 
+            max-width: 26em;
+            min-width: 20em; 
             height: 100%;
             border-radius: 1em;
             box-shadow: 3px 3px 11px 1px #00000078;
+            
 
         }
         .prato img {
@@ -395,6 +407,7 @@ html, body {
     }
     .creditos {
 
+        background-color: colors.$fundo_cardapio;
         @include centralizar;
         padding: 0.5em;
         gap: 0.8em;
